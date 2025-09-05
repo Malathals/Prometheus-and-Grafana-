@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: monitoring-app
+  name: monitoring-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: monitoring-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: monitoring-app
+    spec:
+      containers:
+      - image: malathals14/monitoring-app:v1.0.2
+        name: monitoring-app
+        resources: {}
+status: {}
